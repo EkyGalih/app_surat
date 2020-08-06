@@ -17,8 +17,6 @@ class AuthController extends Controller
     }
 
     public function postLogin(Request $r){
-        print_r($r->all());
-        return;
     	if (Auth::attempt(['username' => $r->input('username'), 'password' => $r->input('password')], $r->input('remember'))) {
             // Authentication passed...
             return redirect()->intended('welcome');
