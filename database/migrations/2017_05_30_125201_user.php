@@ -17,6 +17,11 @@ class User extends Migration
             $table->increments('id');
             $table->string('nama_lengkap', 100);
             $table->string('divisi', 100);
+            $table->integer('divisi_id')->unsigned();
+            $table->foreign('divisi_id')
+                ->references('id')->on('tbl_divisi')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->string('username', 100);
             $table->string('password');
             $table->string('foto')->nullable();

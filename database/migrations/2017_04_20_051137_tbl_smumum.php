@@ -36,6 +36,6 @@ class TblSmumum extends Migration
      */
     public function down()
     {
-        Schema::drop('tbl_smumum');
+        Schema::dropIfExists('tbl_smumum');
     }
 }

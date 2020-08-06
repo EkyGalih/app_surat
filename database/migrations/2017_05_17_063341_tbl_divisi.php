@@ -15,13 +15,13 @@ class TblDivisi extends Migration
     {
         Schema::create('tbl_divisi', function (Blueprint $table) {
           $table->increments('id');
-            $table->string('nama_departemen');
+          $table->string('nama_departemen');
             // $table->integer('distribusi_id')->unsigned();
             // $table->foreign('distribusi_id')
             //     ->references('id')->on('tbl_distribusi')
             //     ->onUpdate('cascade')
             //     ->onDelete('cascade');
-            $table->timestamps();
+          $table->timestamps();
         });
     }
 

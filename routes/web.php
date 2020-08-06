@@ -12,18 +12,18 @@
 */
 
 Route::group(['middleware' => 'auth'], function(){
-	Route::get('welcome', function () {
-		return view('welcome');
-	});
-	Route::get('tes', function () {
-		return view('tes');
-	});
-	Route::get('layout', function () {
-		return view('layout');
-	});
-	Route::get('bantuan', function () {
-		return view('help');
-	});
+	Route::get('welcome', 'SuratController@welcome');
+	Route::get('layout', 'SuratController@layout');
+	Route::get('help', 'SuratController@help');
+	// Route::get('tes', function () {
+	// 	return view('tes');
+	// });
+	// Route::get('layout', function () {
+	// 	return view('layout');
+	// });
+	// Route::get('bantuan', function () {
+	// 	return view('help');
+	// });
 	Route::resource('suratUndangan', 'UndanganController');
 	Route::get('ubahUndangan/{id}', 'UndanganController@ubahUndangan');
 	Route::put('updateUndangan/{id}', 'UndanganController@updateUndangan');
@@ -72,17 +72,16 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('reset_pass/{id}', 'UserController@resetPass');
 	Route::put('changePass/{id}', 'UserController@changePass');
 	Route::put('changeFoto/{id}', 'UserController@ChangePhoto');
-	Route::get('register', function () {
-		return view('auth.register');
-	});
+	// Route::get('register', function () {
+	// 	return view('auth.register');
+	// });
+	Route::get('register', 'SuratController@register');
 	Route::get('logout', 'AuthController@logout');	
 });
 Route::group(['middleware' => 'guest'], function(){
 	Route::get('login', 'AuthController@login');
 });
-Route::get('/', function () {
-	return view('beranda');
-});
+Route::get('/', 'SuratController@beranda');
 Route::post('login', 'AuthController@postLogin');
 
 Route::get('get_notif_filesk', 'FileskController@getNotifFilesk');

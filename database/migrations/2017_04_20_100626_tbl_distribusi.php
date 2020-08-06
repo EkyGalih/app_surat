@@ -39,6 +39,6 @@ class TblDistribusi extends Migration
      */
     public function down()
     {
-        Schema::drop('tbl_distribusi');
+        Schema::dropIfExists('tbl_distribusi');
     }
 }

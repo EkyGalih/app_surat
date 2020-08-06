@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Divisi extends Model
 {
-    protected $table = 'divisi';
-    protected $fillable = ['nama_departemen'];
+    protected $table = 'tbl_divisi';
+    protected $fillable = ['id','nama_departemen'];
 
     public function hasManyUser(){
         return $this->hasMany('App\User', 'divisi_id', 'id');

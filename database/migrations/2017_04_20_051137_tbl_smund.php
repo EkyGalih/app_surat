@@ -36,6 +36,6 @@ class TblSmund extends Migration
      */
     public function down()
     {
-        Schema::drop('tbl_smund');
+        Schema::dropIfExists('tbl_smund');
     }
 }
